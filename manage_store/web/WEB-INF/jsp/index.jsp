@@ -7,18 +7,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Manage Store | Home</title>
-        <link rel="stylesheet" href="<c:url value="/node_modules/font-awesome/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="<c:url value="/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
-        <link rel="stylesheet" href="<c:url value="/css/style.css"/>
-        <link rel="shortcut icon" href="images/favicon.png"/>
+        <link rel="stylesheet" href="<c:url value="/resources/node_modules/font-awesome/css/font-awesome.min.css"/>" />
+        <link rel="stylesheet" href="<c:url value="/resources/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css"/>" />
+        <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
+        <link rel="shortcut icon" href="<c:url value="/resources/images/favicon.png"/>"/>
     </head>
     <body>
         <div class=" container-scroller">
             <!--Navbar-->
             <nav class="navbar bg-primary-gradient col-lg-12 col-12 p-0 fixed-top navbar-inverse d-flex flex-row">
                 <div class="bg-white text-center navbar-brand-wrapper">
-                    <a class="navbar-brand brand-logo" href="#"><img src="images/logo_star_black.png" /></a>
-                    <a class="navbar-brand brand-logo-mini" href="#"><img src="images/logo_star_mini.jpg" alt=""></a>
+                    <a class="navbar-brand brand-logo" href="#"><img src="<c:url value="/resources/images/logo_star_black.png"/>" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="#"><img src="<c:url value="/resources/images/logo_star_mini.jpg"/>" alt=""></a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center">
                     <button class="navbar-toggler navbar-toggler hidden-md-down align-self-center mr-3" type="button" data-toggle="minimize">
@@ -29,7 +29,7 @@
                     </form>
                     <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
                         <li class="nav-item">
-                            <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="images/face.jpg" alt=""></a>
+                            <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="<c:url value="/resources/images/face.jpg"/>" alt=""></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
@@ -45,7 +45,7 @@
                 <div class="row row-offcanvas row-offcanvas-right">
                     <nav class="bg-white sidebar sidebar-fixed sidebar-offcanvas" id="sidebar">
                         <div class="user-info">
-                            <img src="images/face.jpg" alt="">
+                            <img src="<c:url value="/resources/images/face.jpg"/>" alt="">
                             <p class="name">Richard V.Welsh</p>
                             <p class="designation">Manager</p>
                             <span class="online"></span>
@@ -54,62 +54,62 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="#">
                                     <!-- <i class="fa fa-dashboard"></i> -->
-                                    <img src="images/icons/1.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/1.png"/>" alt="">
                                     <span class="menu-title">Dashboard</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/widgets.html">
-                                    <img src="images/icons/2.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/2.png"/>" alt="">
                                     <span class="menu-title">Widgets</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/forms.html">
                                     <!-- <i class="fa fa-wpforms"></i> -->
-                                    <img src="images/icons/3.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/3.png"/>" alt="">
                                     <span class="menu-title">Forms</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/buttons.html">
                                     <!-- <i class="fa fa-calculator"></i> -->
-                                    <img src="images/icons/4.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/4.png"/>" alt="">
                                     <span class="menu-title">Buttons</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/tables.html">
                                     <!-- <i class="fa fa-table"></i> -->
-                                    <img src="images/icons/5.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/5.png"/>" alt="">
                                     <span class="menu-title">Tables</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/charts.html">
                                     <!-- <i class="fa fa-bar-chart"></i> -->
-                                    <img src="images/icons/6.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/6.png"/>" alt="">
                                     <span class="menu-title">Charts</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/icons.html">
                                     <!-- <i class="fa fa-font"></i> -->
-                                    <img src="images/icons/7.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/7.png"/>" alt="">
                                     <span class="menu-title">Icons</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/typography.html">
                                     <!-- <i class="fa fa-bold"></i> -->
-                                    <img src="images/icons/8.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/8.png"/>" alt="">
                                     <span class="menu-title">Typography</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     <!-- <i class="fa fa-address-book"></i> -->
-                                    <img src="images/icons/9.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/9.png"/>" alt="">
                                     <span class="menu-title">Sample Pages<i class="fa fa-sort-down"></i></span>
                                 </a>
                                 <div class="collapse" id="collapseExample">
@@ -145,7 +145,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
                                     <!-- <i class="fa fa-bold"></i> -->
-                                    <img src="images/icons/10.png" alt="">
+                                    <img src="<c:url value="/resources/images/icons/10.png"/>" alt="">
                                     <span class="menu-title">Settings</span>
                                 </a>
                             </li>
@@ -239,35 +239,35 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <th><img src="images/profile.jpg" alt="profile" class="rounded-circle" width="40"
+                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
                                                              height="40" /></th>
                                                     <td>Larry</td>
                                                     <td>Acer</td>
                                                     <td><span class="badge badge-success">Success</span></td>
                                                 </tr>
                                                 <tr>
-                                                    <th><img src="images/profile.jpg" alt="profile" class="rounded-circle" width="40"
+                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
                                                              height="40" /></th>
                                                     <td>Larry</td>
                                                     <td>Acer</td>
                                                     <td><span class="badge badge-danger">Failed</span></td>
                                                 </tr>
                                                 <tr>
-                                                    <th><img src="images/profile.jpg" alt="profile" class="rounded-circle" width="40"
+                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
                                                              height="40" /></th>
                                                     <td>Larry</td>
                                                     <td>Acer</td>
                                                     <td><span class="badge badge-primary">Processing</span></td>
                                                 </tr>
                                                 <tr>
-                                                    <th><img src="images/profile.jpg" alt="profile" class="rounded-circle" width="40"
+                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
                                                              height="40" /></th>
                                                     <td>Larry</td>
                                                     <td>Acer</td>
                                                     <td><span class="badge badge-success">Success</span></td>
                                                 </tr>
                                                 <tr>
-                                                    <th><img src="images/profile.jpg" alt="profile" class="rounded-circle" width="40"
+                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
                                                              height="40" /></th>
                                                     <td>Larry</td>
                                                     <td>Acer</td>
