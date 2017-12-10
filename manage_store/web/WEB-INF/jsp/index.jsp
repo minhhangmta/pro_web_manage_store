@@ -1,315 +1,466 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
 <html>
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Manage Store | Home</title>
-        <link rel="stylesheet" href="<c:url value="/resources/node_modules/font-awesome/css/font-awesome.min.css"/>" />
-        <link rel="stylesheet" href="<c:url value="/resources/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css"/>" />
-        <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
-        <link rel="shortcut icon" href="<c:url value="/resources/images/favicon.png"/>"/>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>" />
+        <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-responsive.min.css"/>" />
+        <link rel="stylesheet" href="<c:url value="/resources/css/fullcalendar.css"/>" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/matrix-style.css" />
+        <link rel="stylesheet" href="<c:url value="/resources/css/matrix-media.css"/>" />
+        <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet" />
+        <link rel="stylesheet" href="<c:url value="/resources/css/jquery.gritter.css"/>" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <div class=" container-scroller">
-            <!--Navbar-->
-            <nav class="navbar bg-primary-gradient col-lg-12 col-12 p-0 fixed-top navbar-inverse d-flex flex-row">
-                <div class="bg-white text-center navbar-brand-wrapper">
-                    <a class="navbar-brand brand-logo" href="#"><img src="<c:url value="/resources/images/logo_star_black.png"/>" /></a>
-                    <a class="navbar-brand brand-logo-mini" href="#"><img src="<c:url value="/resources/images/logo_star_mini.jpg"/>" alt=""></a>
-                </div>
-                <div class="navbar-menu-wrapper d-flex align-items-center">
-                    <button class="navbar-toggler navbar-toggler hidden-md-down align-self-center mr-3" type="button" data-toggle="minimize">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <form class="form-inline mt-2 mt-md-0 hidden-md-down">
-                        <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
-                    </form>
-                    <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
-                        <li class="nav-item">
-                            <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="<c:url value="/resources/images/face.jpg"/>" alt=""></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
-                        </li>
-                    </ul>
-                    <button class="navbar-toggler navbar-toggler-right hidden-lg-up align-self-center" type="button" data-toggle="offcanvas">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </nav>
-            <!--End navbar-->
-            <div class="container-fluid">
-                <div class="row row-offcanvas row-offcanvas-right">
-                    <nav class="bg-white sidebar sidebar-fixed sidebar-offcanvas" id="sidebar">
-                        <div class="user-info">
-                            <img src="<c:url value="/resources/images/face.jpg"/>" alt="">
-                            <p class="name">Richard V.Welsh</p>
-                            <p class="designation">Manager</p>
-                            <span class="online"></span>
-                        </div>
-                        <ul class="nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">
-                                    <!-- <i class="fa fa-dashboard"></i> -->
-                                    <img src="<c:url value="/resources/images/icons/1.png"/>" alt="">
-                                    <span class="menu-title">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/widgets.html">
-                                    <img src="<c:url value="/resources/images/icons/2.png"/>" alt="">
-                                    <span class="menu-title">Widgets</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/forms.html">
-                                    <!-- <i class="fa fa-wpforms"></i> -->
-                                    <img src="<c:url value="/resources/images/icons/3.png"/>" alt="">
-                                    <span class="menu-title">Forms</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/buttons.html">
-                                    <!-- <i class="fa fa-calculator"></i> -->
-                                    <img src="<c:url value="/resources/images/icons/4.png"/>" alt="">
-                                    <span class="menu-title">Buttons</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/tables.html">
-                                    <!-- <i class="fa fa-table"></i> -->
-                                    <img src="<c:url value="/resources/images/icons/5.png"/>" alt="">
-                                    <span class="menu-title">Tables</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/charts.html">
-                                    <!-- <i class="fa fa-bar-chart"></i> -->
-                                    <img src="<c:url value="/resources/images/icons/6.png"/>" alt="">
-                                    <span class="menu-title">Charts</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/icons.html">
-                                    <!-- <i class="fa fa-font"></i> -->
-                                    <img src="<c:url value="/resources/images/icons/7.png"/>" alt="">
-                                    <span class="menu-title">Icons</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/typography.html">
-                                    <!-- <i class="fa fa-bold"></i> -->
-                                    <img src="<c:url value="/resources/images/icons/8.png"/>" alt="">
-                                    <span class="menu-title">Typography</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    <!-- <i class="fa fa-address-book"></i> -->
-                                    <img src="<c:url value="/resources/images/icons/9.png"/>" alt="">
-                                    <span class="menu-title">Sample Pages<i class="fa fa-sort-down"></i></span>
-                                </a>
-                                <div class="collapse" id="collapseExample">
-                                    <ul class="nav flex-column sub-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="samples/blank_page.html">
-                                                Blank Page
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="samples/register.html">
-                                                Register
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="samples/login.html">
-                                                Login
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="samples/not-found.html">
-                                                404
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="samples/error.html">
-                                                500
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <!-- <i class="fa fa-bold"></i> -->
-                                    <img src="<c:url value="/resources/images/icons/10.png"/>" alt="">
-                                    <span class="menu-title">Settings</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- SIDEBAR ENDS -->
 
-                    <div class="content-wrapper">
-                        <h3 class="text-primary mb-4">Dashboard</h3>
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <h4 class="card-title font-weight-normal text-success">7874</h4>
-                                        <p class="card-text">Visitors</p>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                                 aria-valuemax="100">75%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <h4 class="card-title font-weight-normal text-info">75632</h4>
-                                        <p class="card-text ">Sales</p>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0"
-                                                 aria-valuemax="100">40%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <h4 class="card-title font-weight-normal text-warning">2156</h4>
-                                        <p class="card-text">Orders</p>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                                                 aria-valuemax="100">25%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <h4 class="card-title font-weight-normal text-danger">$ 89623</h4>
-                                        <p class="card-text">Revenue</p>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0"
-                                                 aria-valuemax="100">65%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        <!--Header-part-->
+        <div id="header">
+            <h1><a href="dashboard.html">Matrix Admin</a></h1>
+        </div>
+        <!--close-Header-part--> 
+
+
+        <!--top-Header-menu-->
+        <div id="user-nav" class="navbar navbar-inverse">
+            <ul class="nav">
+                <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i> new message</a></li>
+                        <li class="divider"></li>
+                        <li><a class="sInbox" title="" href="#"><i class="icon-envelope"></i> inbox</a></li>
+                        <li class="divider"></li>
+                        <li><a class="sOutbox" title="" href="#"><i class="icon-arrow-up"></i> outbox</a></li>
+                        <li class="divider"></li>
+                        <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i> trash</a></li>
+                    </ul>
+                </li>
+                <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+                <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+            </ul>
+        </div>
+        <!--close-top-Header-menu-->
+        <!--start-top-serch-->
+        <div id="search">
+            <input type="text" placeholder="Search here..."/>
+            <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+        </div>
+        <!--close-top-serch-->
+        <!--sidebar-menu-->
+        <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+            <ul>
+                <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+                <li> <a href="charts.html"><i class="icon icon-signal"></i> <span>Charts &amp; graphs</span></a> </li>
+                <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Widgets</span></a> </li>
+                <li><a href="tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
+                <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
+                <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
+                    <ul>
+                        <li><a href="form-common.html">Basic Form</a></li>
+                        <li><a href="form-validation.html">Form with Validation</a></li>
+                        <li><a href="form-wizard.html">Form with Wizard</a></li>
+                    </ul>
+                </li>
+                <li><a href="buttons.html"><i class="icon icon-tint"></i> <span>Buttons &amp; icons</span></a></li>
+                <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
+                <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Addons</span> <span class="label label-important">5</span></a>
+                    <ul>
+                        <li><a href="index2.html">Dashboard2</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="invoice.html">Invoice</a></li>
+                        <li><a href="chat.html">Chat option</a></li>
+                    </ul>
+                </li>
+                <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span class="label label-important">4</span></a>
+                    <ul>
+                        <li><a href="error403.html">Error 403</a></li>
+                        <li><a href="error404.html">Error 404</a></li>
+                        <li><a href="error405.html">Error 405</a></li>
+                        <li><a href="error500.html">Error 500</a></li>
+                    </ul>
+                </li>
+                <li class="content"> <span>Monthly Bandwidth Transfer</span>
+                    <div class="progress progress-mini progress-danger active progress-striped">
+                        <div style="width: 77%;" class="bar"></div>
+                    </div>
+                    <span class="percent">77%</span>
+                    <div class="stat">21419.94 / 14000 MB</div>
+                </li>
+                <li class="content"> <span>Disk Space Usage</span>
+                    <div class="progress progress-mini active progress-striped">
+                        <div style="width: 87%;" class="bar"></div>
+                    </div>
+                    <span class="percent">87%</span>
+                    <div class="stat">604.44 / 4000 MB</div>
+                </li>
+            </ul>
+        </div>
+        <!--sidebar-menu-->
+
+        <!--main-container-part-->
+        <div id="content">
+            <!--breadcrumbs-->
+            <div id="content-header">
+                <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+            </div>
+            <!--End-breadcrumbs-->
+
+            <!--Action boxes-->
+            <div class="container-fluid">
+                <div class="quick-actions_homepage">
+                    <ul class="quick-actions">
+                        <li class="bg_lb"> <a href="index.html"> <i class="icon-dashboard"></i> <span class="label label-important">20</span> My Dashboard </a> </li>
+                        <li class="bg_lg span3"> <a href="charts.html"> <i class="icon-signal"></i> Charts</a> </li>
+                        <li class="bg_ly"> <a href="widgets.html"> <i class="icon-inbox"></i><span class="label label-success">101</span> Widgets </a> </li>
+                        <li class="bg_lo"> <a href="tables.html"> <i class="icon-th"></i> Tables</a> </li>
+                        <li class="bg_ls"> <a href="grid.html"> <i class="icon-fullscreen"></i> Full width</a> </li>
+                        <li class="bg_lo span3"> <a href="form-common.html"> <i class="icon-th-list"></i> Forms</a> </li>
+                        <li class="bg_ls"> <a href="buttons.html"> <i class="icon-tint"></i> Buttons</a> </li>
+                        <li class="bg_lb"> <a href="interface.html"> <i class="icon-pencil"></i>Elements</a> </li>
+                        <li class="bg_lg"> <a href="calendar.html"> <i class="icon-calendar"></i> Calendar</a> </li>
+                        <li class="bg_lr"> <a href="error404.html"> <i class="icon-info-sign"></i> Error</a> </li>
+
+                    </ul>
+                </div>
+                <!--End-Action boxes-->    
+
+                <!--Chart-box-->    
+                <div class="row-fluid">
+                    <div class="widget-box">
+                        <div class="widget-title bg_lg"><span class="icon"><i class="icon-signal"></i></span>
+                            <h5>Site Analytics</h5>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6  mb-4">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <h5 class="card-title mb-4">Sales</h5>
-                                        <canvas id="lineChart" style="height:250px"></canvas>
-                                    </div>
+                        <div class="widget-content" >
+                            <div class="row-fluid">
+                                <div class="span9">
+                                    <div class="chart"></div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6  mb-4">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <h5 class="card-title mb-4">Customer Satisfaction</h5>
-                                        <canvas id="doughnutChart" style="height:250px"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 mb-4">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <h5 class="card-title mb-4">Payments</h5>
-                                        <table class="table">
-                                            <thead class="text-primary">
-                                                <tr>
-                                                    <th><i class="fa fa-user ml-2"></i></th>
-                                                    <th>User</th>
-                                                    <th>Item</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
-                                                             height="40" /></th>
-                                                    <td>Larry</td>
-                                                    <td>Acer</td>
-                                                    <td><span class="badge badge-success">Success</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
-                                                             height="40" /></th>
-                                                    <td>Larry</td>
-                                                    <td>Acer</td>
-                                                    <td><span class="badge badge-danger">Failed</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
-                                                             height="40" /></th>
-                                                    <td>Larry</td>
-                                                    <td>Acer</td>
-                                                    <td><span class="badge badge-primary">Processing</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
-                                                             height="40" /></th>
-                                                    <td>Larry</td>
-                                                    <td>Acer</td>
-                                                    <td><span class="badge badge-success">Success</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <th><img src="<c:url value="/resources/images/profile.jpg"/>" alt="profile" class="rounded-circle" width="40"
-                                                             height="40" /></th>
-                                                    <td>Larry</td>
-                                                    <td>Acer</td>
-                                                    <td><span class="badge badge-danger">Failed</span></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-4">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <h5 class="card-title"></h5>
-                                        <div id="map" style="min-height:415px;"></div>
-                                    </div>
+                                <div class="span3">
+                                    <ul class="site-stats">
+                                        <li class="bg_lh"><i class="icon-user"></i> <strong>2540</strong> <small>Total Users</small></li>
+                                        <li class="bg_lh"><i class="icon-plus"></i> <strong>120</strong> <small>New Users </small></li>
+                                        <li class="bg_lh"><i class="icon-shopping-cart"></i> <strong>656</strong> <small>Total Shop</small></li>
+                                        <li class="bg_lh"><i class="icon-tag"></i> <strong>9540</strong> <small>Total Orders</small></li>
+                                        <li class="bg_lh"><i class="icon-repeat"></i> <strong>10</strong> <small>Pending Orders</small></li>
+                                        <li class="bg_lh"><i class="icon-globe"></i> <strong>8540</strong> <small>Online Orders</small></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <footer class="footer">
-                        <div class="container-fluid clearfix">
-                            <span class="float-right">
-                                <a href="#">Star Admin</a> &copy; 2017
-                            </span>
+                </div>
+                <!--End-Chart-box--> 
+                <hr/>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="widget-box">
+                            <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2"><span class="icon"><i class="icon-chevron-down"></i></span>
+                                <h5>Latest Posts</h5>
+                            </div>
+                            <div class="widget-content nopadding collapse in" id="collapseG2">
+                                <ul class="recent-posts">
+                                    <li>
+                                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="${pageContext.request.contextPath}/resources/img/demo/av1.jpg"> </div>
+                                        <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="<c:url value="/resources/img/demo/av2.jpg"/>"> </div>
+                                        <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="<c:url value="/resources/img/demo/av4.jpg"/>"> </div>
+                                        <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                                            <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
+                                        </div>
+                                    <li>
+                                        <button class="btn btn-warning btn-mini">View All</button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </footer>
+                        <div class="widget-box">
+                            <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
+                                <h5>To Do list</h5>
+                            </div>
+                            <div class="widget-content">
+                                <div class="todo">
+                                    <ul>
+                                        <li class="clearfix">
+                                            <div class="txt"> Luanch This theme on Themeforest <span class="by label">Alex</span></div>
+                                            <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="txt"> Manage Pending Orders <span class="date badge badge-warning">Today</span> </div>
+                                            <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="txt"> MAke your desk clean <span class="by label">Admin</span></div>
+                                            <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="txt"> Today we celebrate the theme <span class="date badge badge-info">08.03.2013</span> </div>
+                                            <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="txt"> Manage all the orders <span class="date badge badge-important">12.03.2013</span> </div>
+                                            <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-box">
+                            <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
+                                <h5>Progress Box</h5>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="unstyled">
+                                    <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 81% Clicks <span class="pull-right strong">567</span>
+                                        <div class="progress progress-striped ">
+                                            <div style="width: 81%;" class="bar"></div>
+                                        </div>
+                                    </li>
+                                    <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 72% Uniquie Clicks <span class="pull-right strong">507</span>
+                                        <div class="progress progress-success progress-striped ">
+                                            <div style="width: 72%;" class="bar"></div>
+                                        </div>
+                                    </li>
+                                    <li> <span class="icon24 icomoon-icon-arrow-down-2 red"></span> 53% Impressions <span class="pull-right strong">457</span>
+                                        <div class="progress progress-warning progress-striped ">
+                                            <div style="width: 53%;" class="bar"></div>
+                                        </div>
+                                    </li>
+                                    <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 3% Online Users <span class="pull-right strong">8</span>
+                                        <div class="progress progress-danger progress-striped ">
+                                            <div style="width: 3%;" class="bar"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG3" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+                                <h5>News updates</h5>
+                            </div>
+                            <div class="widget-content nopadding updates collapse in" id="collapseG3">
+                                <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+                                    <div class="update-done"><a title="" href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a> <span>dolor sit amet, consectetur adipiscing eli</span> </div>
+                                    <div class="update-date"><span class="update-day">20</span>jan</div>
+                                </div>
+                                <div class="new-update clearfix"> <i class="icon-gift"></i> <span class="update-notice"> <a title="" href="#"><strong>Congratulation Maruti, Happy Birthday </strong></a> <span>many many happy returns of the day</span> </span> <span class="update-date"><span class="update-day">11</span>jan</span> </div>
+                                <div class="new-update clearfix"> <i class="icon-move"></i> <span class="update-alert"> <a title="" href="#"><strong>Maruti is a Responsive Admin theme</strong></a> <span>But already everything was solved. It will ...</span> </span> <span class="update-date"><span class="update-day">07</span>Jan</span> </div>
+                                <div class="new-update clearfix"> <i class="icon-leaf"></i> <span class="update-done"> <a title="" href="#"><strong>Envato approved Maruti Admin template</strong></a> <span>i am very happy to approved by TF</span> </span> <span class="update-date"><span class="update-day">05</span>jan</span> </div>
+                                <div class="new-update clearfix"> <i class="icon-question-sign"></i> <span class="update-notice"> <a title="" href="#"><strong>I am alwayse here if you have any question</strong></a> <span>we glad that you choose our template</span> </span> <span class="update-date"><span class="update-day">01</span>jan</span> </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="span6">
+                        <div class="widget-box widget-chat">
+                            <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+                                <h5>Chat Option</h5>
+                            </div>
+                            <div class="widget-content nopadding collapse in" id="collapseG4">
+                                <div class="chat-users panel-right2">
+                                    <div class="panel-title">
+                                        <h5>Online Users</h5>
+                                    </div>
+                                    <div class="panel-content nopadding">
+                                        <ul class="contact-list">
+                                            <li id="user-Alex" class="online"><a href=""><img alt="" src="<c:url value="/resources/img/demo/av1.jpg"/>" /> <span>Alex</span></a></li>
+                                            <li id="user-Linda"><a href=""><img alt="" src="<c:url value="/resources/img/demo/av2.jpg"/>" /> <span>Linda</span></a></li>
+                                            <li id="user-John" class="online new"><a href=""><img alt="" src="<c:url value="/resources/img/demo/av3.jpg"/>" /> <span>John</span></a><span class="msg-count badge badge-info">3</span></li>
+                                            <li id="user-Mark" class="online"><a href=""><img alt="" src="<c:url value="/resources/img/demo/av4.jpg"/>" /> <span>Mark</span></a></li>
+                                            <li id="user-Maxi" class="online"><a href=""><img alt="" src="<c:url value="/resources/img/demo/av5.jpg"/>" /> <span>Maxi</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="chat-content panel-left2">
+                                    <div class="chat-messages" id="chat-messages">
+                                        <div id="chat-messages-inner"></div>
+                                    </div>
+                                    <div class="chat-message well">
+                                        <button class="btn btn-success">Send</button>
+                                        <span class="input-box">
+                                            <input type="text" name="msg-box" id="msg-box" />
+                                        </span> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-box">
+                            <div class="widget-title"><span class="icon"><i class="icon-user"></i></span>
+                                <h5>Our Partner (Box with Fix height)</h5>
+                            </div>
+                            <div class="widget-content nopadding fix_hgt">
+                                <ul class="recent-posts">
+                                    <li>
+                                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="<c:url value="/resources/img/demo/av1.jpg"/>"> </div>
+                                        <div class="article-post"> <span class="user-info">John Deo</span>
+                                            <p>Web Desginer &amp; creative Front end developer</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="<c:url value="/resources/img/demo/av2.jpg"/>"> </div>
+                                        <div class="article-post"> <span class="user-info">John Deo</span>
+                                            <p>Web Desginer &amp; creative Front end developer</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="<c:url value="/resources/img/demo/av4.jpg"/>"> </div>
+                                        <div class="article-post"> <span class="user-info">John Deo</span>
+                                            <p>Web Desginer &amp; creative Front end developer</p>
+                                        </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accordion" id="collapse-group">
+                            <div class="accordion-group widget-box">
+                                <div class="accordion-heading">
+                                    <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
+                                            <h5>Accordion Example 1</h5>
+                                        </a> </div>
+                                </div>
+                                <div class="collapse in accordion-body" id="collapseGOne">
+                                    <div class="widget-content"> It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
+                                </div>
+                            </div>
+                            <div class="accordion-group widget-box">
+                                <div class="accordion-heading">
+                                    <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGTwo" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
+                                            <h5>Accordion Example 2</h5>
+                                        </a> </div>
+                                </div>
+                                <div class="collapse accordion-body" id="collapseGTwo">
+                                    <div class="widget-content">And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-group widget-box">
+                                <div class="accordion-heading">
+                                    <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGThree" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
+                                            <h5>Accordion Example 3</h5>
+                                        </a> </div>
+                                </div>
+                                <div class="collapse accordion-body" id="collapseGThree">
+                                    <div class="widget-content"> Waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-box collapsible">
+                            <div class="widget-title"> <a data-toggle="collapse" href="#collapseOne"> <span class="icon"><i class="icon-arrow-right"></i></span>
+                                    <h5>Toggle, Open by default, </h5>
+                                </a> </div>
+                            <div id="collapseOne" class="collapse in">
+                                <div class="widget-content"> This box is opened by default, paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
+                            </div>
+                            <div class="widget-title"> <a data-toggle="collapse" href="#collapseTwo"> <span class="icon"><i class="icon-remove"></i></span>
+                                    <h5>Toggle, closed by default</h5>
+                                </a> </div>
+                            <div id="collapseTwo" class="collapse">
+                                <div class="widget-content"> This box is now open </div>
+                            </div>
+                            <div class="widget-title"> <a data-toggle="collapse" href="#collapseThree"> <span class="icon"><i class="icon-remove"></i></span>
+                                    <h5>Toggle, closed by default</h5>
+                                </a> </div>
+                            <div id="collapseThree" class="collapse">
+                                <div class="widget-content"> This box is now open </div>
+                            </div>
+                        </div>
+                        <div class="widget-box">
+                            <div class="widget-title">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#tab1">Tab1</a></li>
+                                    <li><a data-toggle="tab" href="#tab2">Tab2</a></li>
+                                    <li><a data-toggle="tab" href="#tab3">Tab3</a></li>
+                                </ul>
+                            </div>
+                            <div class="widget-content tab-content">
+                                <div id="tab1" class="tab-pane active">
+                                    <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment.</p>
+                                    <img src="<c:url value="/resources/img/demo/demo-image1.jpg"/>" alt="demo-image"/></div>
+                                <div id="tab2" class="tab-pane"> <img src="<c:url value="/resources/img/demo/demo-image2.jpg"/>" alt="demo-image"/>
+                                    <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment.</p>
+                                </div>
+                                <div id="tab3" class="tab-pane">
+                                    <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. </p>
+                                    <img src="<c:url value="/resources/img/demo/demo-image3.jpg"/>" alt="demo-image"/></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
 
-        <script src="node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="node_modules/tether/dist/js/tether.min.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="node_modules/chart.js/dist/Chart.min.js"></script>
-        <script src="node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5NXz9eVnyJOA81wimI8WYE08kW_JMe8g&callback=initMap" async defer></script>
-        <script src="js/off-canvas.js"></script>
-        <script src="js/hoverable-collapse.js"></script>
-        <script src="js/misc.js"></script>
-        <script src="js/chart.js"></script>
-        <script src="js/maps.js"></script>
+        <!--end-main-container-part-->
+
+        <!--Footer-part-->
+
+        <div class="row-fluid">
+            <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
+        </div>
+
+        <!--end-Footer-part-->
+
+        <script src="<c:url value="/resources/js/excanvas.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.ui.custom.js"/>"></script> 
+        <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.flot.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.flot.resize.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.peity.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/fullcalendar.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/matrix.js"/>"></script> 
+        <script src="<c:url value="/resources/js/matrix.dashboard.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.gritter.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/matrix.interface.js"/>"></script> 
+        <script src="<c:url value="/resources/js/matrix.chat.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.validate.js"/>"></script> 
+        <script src="<c:url value="/resources/js/matrix.form_validation.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.wizard.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.uniform.js"/>"></script> 
+        <script src="<c:url value="/resources/js/select2.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/matrix.popover.js"/>"></script> 
+        <script src="<c:url value="/resources/js/jquery.dataTables.min.js"/>"></script> 
+        <script src="<c:url value="/resources/js/matrix.tables.js"/>"></script> 
+
+        <script type="text/javascript">
+            // This function is called from the pop-up menus to transfer to
+            // a different page. Ignore if the value returned is a null string:
+            function goPage(newURL) {
+
+                // if url is empty, skip the menu dividers and reset the menu selection to default
+                if (newURL != "") {
+
+                    // if url is "-", it is this page -- reset the menu:
+                    if (newURL == "-") {
+                        resetMenu();
+                    }
+                    // else, send page to designated URL            
+                    else {
+                        document.location.href = newURL;
+                    }
+                }
+            }
+
+        // resets the menu selection upon entry to this page:
+            function resetMenu() {
+                document.gomenu.selector.selectedIndex = 2;
+            }
+        </script>
     </body>
 </html>

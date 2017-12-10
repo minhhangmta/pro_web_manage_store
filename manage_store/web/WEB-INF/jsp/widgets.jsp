@@ -1,553 +1,486 @@
-<%-- 
-    Document   : widgets
-    Created on : Dec 9, 2017, 1:47:39 PM
-    Author     : minhh
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Star Admin</title>
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="shortcut icon" href="../images/favicon.png" />
+<html lang="en">
+<head>
+<title>Matrix Admin</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="css/matrix-style.css" />
+<link rel="stylesheet" href="css/matrix-media.css" />
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
-    <div class=" container-scroller">
-        <!--Navbar-->
-        <nav class="navbar bg-primary-gradient col-lg-12 col-12 p-0 fixed-top navbar-inverse d-flex flex-row">
-            <div class="bg-white text-center navbar-brand-wrapper">
-                <a class="navbar-brand brand-logo" href="#"><img src="../images/logo_star_black.png" /></a>
-                <a class="navbar-brand brand-logo-mini" href="#"><img src="../images/logo_star_mini.jpg" alt=""></a>
-            </div>
-            <div class="navbar-menu-wrapper d-flex align-items-center">
-                <button class="navbar-toggler navbar-toggler hidden-md-down align-self-center mr-3" type="button" data-toggle="minimize">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <form class="form-inline mt-2 mt-md-0 hidden-md-down">
-                    <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
-                </form>
-                <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
-                    <li class="nav-item">
-                        <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="../images/face.jpg" alt=""></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
-                    </li>
-                </ul>
-                <button class="navbar-toggler navbar-toggler-right hidden-lg-up align-self-center" type="button" data-toggle="offcanvas">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
-        <!--End navbar-->
-        <div class="container-fluid">
-            <div class="row row-offcanvas row-offcanvas-right">
-                <nav class="bg-white sidebar sidebar-fixed sidebar-offcanvas" id="sidebar">
-                <div class="user-info">
-                    <img src="../images/face.jpg" alt="">
-                    <p class="name">Richard V.Welsh</p>
-                    <p class="designation">Manager</p>
-                    <span class="online"></span>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="dashboard.html">Matrix Admin</a></h1>
+</div>
+<!--close-Header-part--> 
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+        <li class="divider"></li>
+        <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+      </ul>
+    </li>
+    <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i> new message</a></li>
+        <li class="divider"></li>
+        <li><a class="sInbox" title="" href="#"><i class="icon-envelope"></i> inbox</a></li>
+        <li class="divider"></li>
+        <li><a class="sOutbox" title="" href="#"><i class="icon-arrow-up"></i> outbox</a></li>
+        <li class="divider"></li>
+        <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i> trash</a></li>
+      </ul>
+    </li>
+    <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+    <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+  </ul>
+</div>
+
+<!--start-top-serch-->
+<div id="search">
+  <input type="text" placeholder="Search here..."/>
+  <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+</div>
+<!--close-top-serch--> 
+
+<!--sidebar-menu-->
+<div id="sidebar"> <a href="#" class="visible-phone"><i class="icon icon-inbox"></i> Widgets</a>
+  <ul>
+    <li><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li > <a href="charts.html"><i class="icon icon-signal"></i> <span>Charts &amp; graphs</span></a> </li>
+    <li class="active"> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Widgets</span></a> </li>
+    <li><a href="tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
+    <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
+    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
+      <ul>
+        <li><a href="form-common.html">Basic Form</a></li>
+        <li><a href="form-validation.html">Form with Validation</a></li>
+        <li><a href="form-wizard.html">Form with Wizard</a></li>
+      </ul>
+    </li>
+    <li><a href="buttons.html"><i class="icon icon-tint"></i> <span>Buttons &amp; icons</span></a></li>
+    <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
+    <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Addons</span> <span class="label label-important">5</span></a>
+      <ul>
+        <li><a href="index2.html">Dashboard2</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="invoice.html">Invoice</a></li>
+        <li><a href="chat.html">Chat option</a></li>
+      </ul>
+    </li>
+    <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span class="label label-important">4</span></a>
+      <ul>
+        <li><a href="error403.html">Error 403</a></li>
+        <li><a href="error404.html">Error 404</a></li>
+        <li><a href="error405.html">Error 405</a></li>
+        <li><a href="error500.html">Error 500</a></li>
+      </ul>
+    </li>
+    <li class="content"> <span>Monthly Bandwidth Transfer</span>
+      <div class="progress progress-mini progress-danger active progress-striped">
+        <div style="width: 77%;" class="bar"></div>
+      </div>
+      <span class="percent">77%</span>
+      <div class="stat">21419.94 / 14000 MB</div>
+    </li>
+    <li class="content"> <span>Disk Space Usage</span>
+      <div class="progress progress-mini active progress-striped">
+        <div style="width: 87%;" class="bar"></div>
+      </div>
+      <span class="percent">87%</span>
+      <div class="stat">604.44 / 4000 MB</div>
+    </li>
+  </ul>
+</div>
+<!--sidebar-menu-->
+
+<!--main-container-part-->
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Widgets</a> </div>
+    <h1>Widgets</h1>
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-file"></i> </span>
+            <h5>Recent Posts</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <ul class="recent-posts">
+              <li>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av1.jpg"> </div>
+                <div class="article-post">
+                  <div class="fr"><a href="#" class="btn btn-primary btn-mini">Edit</a> <a href="#" class="btn btn-success btn-mini">Publish</a> <a href="#" class="btn btn-danger btn-mini">Delete</a></div>
+                  <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                  <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
                 </div>
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">
-                                <!-- <i class="fa fa-dashboard"></i> -->
-                                <img src="../images/icons/1.png" alt="">
-                                <span class="menu-title">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="../pages/widgets.html">
-                                <img src="../images/icons/2.png" alt="">
-                                <span class="menu-title">Widgets</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pages/forms.html">
-                                <!-- <i class="fa fa-wpforms"></i> -->
-                                <img src="../images/icons/3.png" alt="">
-                                <span class="menu-title">Forms</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pages/buttons.html">
-                                <!-- <i class="fa fa-calculator"></i> -->
-                                <img src="../images/icons/4.png" alt="">
-                                <span class="menu-title">Buttons</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pages/tables.html">
-                                <!-- <i class="fa fa-table"></i> -->
-                                <img src="../images/icons/5.png" alt="">
-                                <span class="menu-title">Tables</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pages/charts.html">
-                                <!-- <i class="fa fa-bar-chart"></i> -->
-                                <img src="../images/icons/6.png" alt="">
-                                <span class="menu-title">Charts</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pages/icons.html">
-                                <!-- <i class="fa fa-font"></i> -->
-                                <img src="../images/icons/7.png" alt="">
-                                <span class="menu-title">Icons</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pages/typography.html">
-                                <!-- <i class="fa fa-bold"></i> -->
-                                <img src="../images/icons/8.png" alt="">
-                                <span class="menu-title">Typography</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                <!-- <i class="fa fa-address-book"></i> -->
-                                <img src="../images/icons/9.png" alt="">
-                                <span class="menu-title">Sample Pages<i class="fa fa-sort-down"></i></span>
-                            </a>
-                            <div class="collapse" id="collapseExample">
-                                <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../samples/blank_page.html">
-                                      Blank Page
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../samples/register.html">
-                                      Register
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../samples/login.html">
-                                      Login
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../samples/not-found.html">
-                                      404
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../samples/error.html">
-                                      500
-                                    </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <!-- <i class="fa fa-bold"></i> -->
-                                <img src="../images/icons/10.png" alt="">
-                                <span class="menu-title">Settings</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- SIDEBAR ENDS -->
-
-
-
-                <div class="content-wrapper">
-                    <h3 class="text-primary mb-4">Widgets</h3>
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <div class="clearfix">
-                                        <i class="fa fa-user-o float-right icon-grey-big"></i>
-                                    </div>
-                                    <h4 class="card-title font-weight-normal text-success">45465</h4>
-                                    <h6 class="card-subtitle mb-4">Visitors</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success-gadient progress-slim" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <div class="clearfix">
-                                        <i class="fa fa-shopping-cart float-right icon-grey-big"></i>
-                                    </div>
-                                    <h4 class="card-title font-weight-normal text-info">7895</h4>
-                                    <h6 class="card-subtitle mb-4">Sales</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info-gadient progress-slim" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <div class="clearfix">
-                                        <i class="fa fa-arrow-circle-o-right float-right icon-grey-big"></i>
-                                    </div>
-                                    <h4 class="card-title font-weight-normal text-warning">1569</h4>
-                                    <h6 class="card-subtitle mb-4">Orders</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-warning-gadient progress-slim" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <div class="clearfix">
-                                        <i class="fa fa-bar-chart float-right icon-grey-big"></i>
-                                    </div>
-                                    <h4 class="card-title font-weight-normal text-danger">$ 63259</h4>
-                                    <h6 class="card-subtitle mb-4">Revenue</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-danger-gadient progress-slim" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h4 class="card-title font-weight-normal text-success">7896</h4>
-                                    <p class="card-text">Visitors</p>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                            aria-valuemax="100">75%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h4 class="card-title font-weight-normal text-info">5623</h4>
-                                    <p class="card-text">Sales</p>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0"
-                                            aria-valuemax="100">40%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h4 class="card-title font-weight-normal text-warning">1236</h4>
-                                    <p class="card-text">Orders</p>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                                            aria-valuemax="100">25%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h4 class="card-title font-weight-normal text-danger">$ 7832</h4>
-                                    <p class="card-text">Revenue</p>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0"
-                                            aria-valuemax="100">65%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h6 class="card-title font-weight-normal text-info">7896</h6>
-                                    <h6 class="card-subtitle mb-4 text-muted">Visitors</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info progress-slim" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h6 class="card-title font-weight-normal text-info">7523</h6>
-                                    <h6 class="card-subtitle mb-4 text-muted">Sales</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info progress-slim" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h6 class="card-title font-weight-normal text-info">6932</h6>
-                                    <h6 class="card-subtitle mb-4 text-muted">Orders</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info progress-slim" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h6 class="card-title font-weight-normal text-info">$ 54123</h6>
-                                    <h6 class="card-subtitle mb-4 text-muted">Revenue</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info progress-slim" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h6 class="card-title font-weight-normal text-info">23658</h6>
-                                    <h6 class="card-subtitle mb-4 text-muted">New clients</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info progress-slim" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h6 class="card-title font-weight-normal text-info">8965</h6>
-                                    <h6 class="card-subtitle mb-4 text-muted">Comments</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info progress-slim" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h5 class="card-title mb-4">Global Sales by Top Locations</h5>
-                                    <div class="row">
-                                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12">
-                                            <table class="table table-striped">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="../images/flags/US.png">
-                                                            </div>
-                                                        </td>
-                                                        <td>USA</td>
-                                                        <td class="text-right">
-                                                            2.920
-                                                        </td>
-                                                        <td class="text-right">
-                                                            53.23%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="../images/flags/DE.png">
-                                                            </div>
-                                                        </td>
-                                                        <td>Germany</td>
-                                                        <td class="text-right">
-                                                            1.300
-                                                        </td>
-                                                        <td class="text-right">
-                                                            20.43%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="../images/flags/AU.png">
-                                                            </div>
-                                                        </td>
-                                                        <td>Australia</td>
-                                                        <td class="text-right">
-                                                            760
-                                                        </td>
-                                                        <td class="text-right">
-                                                            10.35%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="../images/flags/GB.png">
-                                                            </div>
-                                                        </td>
-                                                        <td>United Kingdom</td>
-                                                        <td class="text-right">
-                                                            690
-                                                        </td>
-                                                        <td class="text-right">
-                                                            7.87%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="../images/flags/RO.png">
-                                                            </div>
-                                                        </td>
-                                                        <td>Romania</td>
-                                                        <td class="text-right">
-                                                            600
-                                                        </td>
-                                                        <td class="text-right">
-                                                            5.94%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="../images/flags/BR.png">
-                                                            </div>
-                                                        </td>
-                                                        <td>Brasil</td>
-                                                        <td class="text-right">
-                                                            550
-                                                        </td>
-                                                        <td class="text-right">
-                                                            4.34%
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12">
-                                            <div id="map" style="min-height:300px;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-4">
-                            <div class="card" style="min-height:395px;">
-                                <div class="card-block">
-                                    <h5 class="card-title mb-4">Testimonial</h5>
-                                    <div class="text-center">
-                                        <img src="../images/profile.jpg" class="rounded-circle" width="100" height="100" />
-                                    </div>
-                                    <div class="text-center mt-3">
-                                        <i class="fa fa-quote-right icon-grey-big"></i>
-                                    </div>
-                                    <p class="font-italic text-muted mt-3">
-                                        Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures,
-                                        cards... everything. Keep up the great work!
-                                    </p>
-                                    <h5 class="text-center font-weight-bold txt-brand-color">Tom Swayer</h5>
-                                    <h6 class="text-center text-muted">CEO/CO-FOUNDER</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-4">
-                            <div class="card" style="min-height:395px;">
-                                <div class="card-block">
-                                    <h5 class="card-title mb-4">Employees</h5>
-                                    <table class="table table-hover table-striped">
-                                        <thead class="text-primary">
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Salary</th>
-                                                <th>Country</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Bob Williams</td>
-                                                <td>$23,566</td>
-                                                <td>USA</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Mike Tyson</td>
-                                                <td>$10,200</td>
-                                                <td>Canada</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Tim Sebastian</td>
-                                                <td>$32,190</td>
-                                                <td>Netherlands</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Philip Morris</td>
-                                                <td>$31,123</td>
-                                                <td>Korea, South</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Minerva Hooper</td>
-                                                <td>$23,789</td>
-                                                <td>South Africa</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Cooper</td>
-                                                <td>$27,789</td>
-                                                <td>Canada</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Philip</td>
-                                                <td>$13,789</td>
-                                                <td>South Africa</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </li>
+              <li>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
+                <div class="article-post">
+                  <div class="fr"><a href="#" class="btn btn-primary btn-mini">Edit</a> <a href="#" class="btn btn-success btn-mini">Publish</a> <a href="#" class="btn btn-danger btn-mini">Delete</a></div>
+                  <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                  <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
                 </div>
-                <footer class="footer">
-                    <div class="container-fluid clearfix">
-                        <span class="float-right">
-                          <a href="#">Star Admin</a> &copy; 2017
-                      </span>
-                    </div>
-                </footer>
-            </div>
+              </li>
+              <li>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av3.jpg"> </div>
+                <div class="article-post">
+                  <div class="fr"><a href="#" class="btn btn-primary btn-mini">Edit</a> <a href="#" class="btn btn-success btn-mini">Publish</a> <a href="#" class="btn btn-danger btn-mini">Delete</a></div>
+                  <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                  <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
+                </div>
+              <li>
+                <button class="btn btn-warning btn-mini">View All</button>
+              </li>
+            </ul>
+          </div>
         </div>
-
+        <div class="accordion" id="collapse-group">
+          <div class="accordion-group widget-box">
+            <div class="accordion-heading">
+              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse"> <span class="icon"><i class="icon-ok"></i></span>
+                <h5>Accordion option1</h5>
+                </a> </div>
+            </div>
+            <div class="collapse in accordion-body" id="collapseGOne">
+              <div class="widget-content"> This is opened by default </div>
+            </div>
+          </div>
+          <div class="accordion-group widget-box">
+            <div class="accordion-heading">
+              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGTwo" data-toggle="collapse"> <span class="icon"><i class="icon-circle-arrow-right"></i></span>
+                <h5>Accordion closed</h5>
+                </a> </div>
+            </div>
+            <div class="collapse accordion-body" id="collapseGTwo">
+              <div class="widget-content"> Another is open </div>
+            </div>
+          </div>
+          <div class="accordion-group widget-box">
+            <div class="accordion-heading">
+              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGThree" data-toggle="collapse"> <span class="icon"><i class="icon-eye-open"></i></span>
+                <h5>Accordion closed</h5>
+                </a> </div>
+            </div>
+            <div class="collapse accordion-body" id="collapseGThree">
+              <div class="widget-content"> Another is open </div>
+            </div>
+          </div>
+        </div>
+        <div class="widget-box collapsible">
+          <div class="widget-title"> <a href="#collapseOne" data-toggle="collapse"> <span class="icon"><i class="icon-arrow-right"></i></span>
+            <h5>Toggle, Open by default</h5>
+            </a> </div>
+          <div class="collapse in" id="collapseOne">
+            <div class="widget-content"> This box is opened by default </div>
+          </div>
+          <div class="widget-title"> <a href="#collapseTwo" data-toggle="collapse"> <span class="icon"><i class="icon-remove"></i></span>
+            <h5>Toggle, closed by default</h5>
+            </a> </div>
+          <div class="collapse" id="collapseTwo">
+            <div class="widget-content"> This box is now open </div>
+          </div>
+          <div class="widget-title"> <a href="#collapseThree" data-toggle="collapse"> <span class="icon"><i class="icon-remove"></i></span>
+            <h5>Toggle, closed by default</h5>
+            </a> </div>
+          <div class="collapse" id="collapseThree">
+            <div class="widget-content"> This box is now open </div>
+          </div>
+        </div>
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-refresh"></i> </span>
+            <h5>News updates</h5>
+          </div>
+          <div class="widget-content nopadding updates">
+            <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+              <div class="update-done"><a href="#" title=""><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a> <span>dolor sit amet, consectetur adipiscing eli</span> </div>
+              <div class="update-date"><span class="update-day">20</span>jan</div>
+            </div>
+            <div class="new-update clearfix"> <i class="icon-gift"></i> <span class="update-notice"> <a href="#" title=""><strong>Congratulation Maruti, Happy Birthday </strong></a> <span>many many happy returns of the day</span> </span> <span class="update-date"><span class="update-day">11</span>jan</span> </div>
+            <div class="new-update clearfix"> <i class="icon-move"></i> <span class="update-alert"> <a href="#" title=""><strong>Maruti is a Responsive Admin theme</strong></a> <span>But already everything was solved. It will ...</span> </span> <span class="update-date"><span class="update-day">07</span>Jan</span> </div>
+            <div class="new-update clearfix"> <i class="icon-leaf"></i> <span class="update-done"> <a href="#" title=""><strong>Envato approved Maruti Admin template</strong></a> <span>i am very happy to approved by TF</span> </span> <span class="update-date"><span class="update-day">05</span>jan</span> </div>
+            <div class="new-update clearfix"> <i class="icon-question-sign"></i> <span class="update-notice"> <a href="#" title=""><strong>I am alwayse here if you have any question</strong></a> <span>we glad that you choose our template</span> </span> <span class="update-date"><span class="update-day">01</span>jan</span> </div>
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-time"></i></span>
+            <h5>To Do List</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Status</th>
+                  <th>Opts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="taskDesc"><i class="icon-info-sign"></i> Making The New Suit</td>
+                  <td class="taskStatus"><span class="in-progress">in progress</span></td>
+                  <td class="taskOptions"><a href="#" class="tip-top" data-original-title="Update"><i class="icon-ok"></i></a> <a href="#" class="tip-top" data-original-title="Delete"><i class="icon-remove"></i></a></td>
+                </tr>
+                <tr>
+                  <td class="taskDesc"><i class="icon-plus-sign"></i> Luanch My New Site</td>
+                  <td class="taskStatus"><span class="pending">pending</span></td>
+                  <td class="taskOptions"><a href="#" class="tip-top" data-original-title="Update"><i class="icon-ok"></i></a> <a href="#" class="tip-top" data-original-title="Delete"><i class="icon-remove"></i></a></td>
+                </tr>
+                <tr>
+                  <td class="taskDesc"><i class="icon-ok-sign"></i> Maruti Excellant Theme</td>
+                  <td class="taskStatus"><span class="done">done</span></td>
+                  <td class="taskOptions"><a href="#" class="tip-top" data-original-title="Update"><i class="icon-ok"></i></a> <a href="#" class="tip-top" data-original-title="Delete"><i class="icon-remove"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="widget-box">
+          <div class="widget-title">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#tab1">Tab1</a></li>
+              <li><a data-toggle="tab" href="#tab2">Tab2</a></li>
+              <li><a data-toggle="tab" href="#tab3">Tab3</a></li>
+            </ul>
+          </div>
+          <div class="widget-content tab-content">
+            <div id="tab1" class="tab-pane active">
+              <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </p>
+            </div>
+            <div id="tab2" class="tab-pane">
+              <p> waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </p>
+            </div>
+            <div id="tab3" class="tab-pane">
+              <p>full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </p>
+            </div>
+          </div>
+        </div>
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-repeat"></i></span>
+            <h5>Recent Activity</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <ul class="activity-list">
+              <li><a href="#"> <i class="icon-user"></i> <strong>Themeforest</strong>Approved My college theme <strong>1 user</strong> <span>2 hours ago</span> </a></li>
+              <li><a href="#"> <i class="icon-file"></i> <strong>My College is PSD Template </strong> Theme <strong>Psd Theme</strong> <span>2months ago</span> </a></li>
+              <li><a href="#"> <i class="icon-envelope"></i> <strong>Lorem ipsum doler set</strong> adag<strong>agg</strong> <span>2 days ago</span> </a></li>
+              <li><a href="#"> <i class="icon-picture"></i> <strong>ITs my First Admin</strong> so very<strong>exited</strong> <span>2 days ago</span> </a></li>
+              <li><a href="#"> <i class="icon-user"></i> <strong>Admin</strong> bans <strong>3 users</strong> <span>week ago</span> </a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
+            <h5>To Do list</h5>
+          </div>
+          <div class="widget-content">
+            <div class="todo">
+              <ul>
+                <li class="clearfix">
+                  <div class="txt"> Luanch This theme on Themeforest <span class="by label">Nirav</span> <span class="date badge badge-important">Today</span> </div>
+                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                </li>
+                <li class="clearfix">
+                  <div class="txt"> Manage Pending Orders <span class="by label">Alex</span> <span class="date badge badge-warning">Today</span> </div>
+                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                </li>
+                <li class="clearfix">
+                  <div class="txt"> MAke your desk clean <span class="by label">Admin</span> <span class="date badge badge-success">Tomorrow</span> </div>
+                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                </li>
+                <li class="clearfix">
+                  <div class="txt"> Today we celebrate the great looking theme <span class="by label">Admin</span> <span class="date badge badge-info">08.03.2013</span> </div>
+                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                </li>
+                <li class="clearfix">
+                  <div class="txt"> Manage all the orders <span class="by label">Mark</span> <span class="date badge badge-info">12.03.2013</span> </div>
+                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
+            <h5>To Do list</h5>
+          </div>
+          <div class="widget-content">
+            <ul class="unstyled">
+              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 81% Clicks <span class="pull-right strong">567</span>
+                <div class="progress progress-striped ">
+                  <div style="width: 81%;" class="bar"></div>
+                </div>
+              </li>
+              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 72% Uniquie Clicks <span class="pull-right strong">507</span>
+                <div class="progress progress-success progress-striped ">
+                  <div style="width: 72%;" class="bar"></div>
+                </div>
+              </li>
+              <li> <span class="icon24 icomoon-icon-arrow-down-2 red"></span> 53% Impressions <span class="pull-right strong">457</span>
+                <div class="progress progress-warning progress-striped ">
+                  <div style="width: 53%;" class="bar"></div>
+                </div>
+              </li>
+              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 3% Online Users <span class="pull-right strong">8</span>
+                <div class="progress progress-danger progress-striped ">
+                  <div style="width: 3%;" class="bar"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+    <hr>
+    <div class="row-fluid">
+      <div class="span4">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-eye-open"></i> </span>
+            <h5>Browesr statistics</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Browser</th>
+                  <th>Visits</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Chrome</td>
+                  <td>8850</td>
+                </tr>
+                <tr>
+                  <td>Firefox</td>
+                  <td>5670</td>
+                </tr>
+                <tr>
+                  <td>Internet Explorer</td>
+                  <td>4130</td>
+                </tr>
+                <tr>
+                  <td>Opera</td>
+                  <td>1574</td>
+                </tr>
+                <tr>
+                  <td>Safari</td>
+                  <td>1044</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-arrow-right"></i> </span>
+            <h5>Website statistics</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Site</th>
+                  <th>Visits</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="#">Themeforest.com</a></td>
+                  <td>12444</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Themedesigner.in</a></td>
+                  <td>10455</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Themedesigner.in</a></td>
+                  <td>8455</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Themedesigner.in</a></td>
+                  <td>4456</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Themedesigner.in</a></td>
+                  <td>2210</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-file"></i> </span>
+            <h5>Visited Pages</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Page</th>
+                  <th>Visits</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="#">Freebies</a></td>
+                  <td>8550</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Blog</a></td>
+                  <td>7550</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Work</a></td>
+                  <td>5247</td>
+                </tr>
+                <tr>
+                  <td><a href="#">site template</a></td>
+                  <td>4880</td>
+                </tr>
+                <tr>
+                  <td><a href="#">All categories</a></td>
+                  <td>4801</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--main-container-part-->
 
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/tether/dist/js/tether.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-    <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5NXz9eVnyJOA81wimI8WYE08kW_JMe8g&callback=initMap" async defer></script>
-    <script src="../js/off-canvas.js"></script>
-    <script src="../js/hoverable-collapse.js"></script>
-    <script src="../js/misc.js"></script>
-    <script src="../js/chart.js"></script>
-    <script src="../js/maps.js"></script>
+<!--Footer-part-->
+<div class="row-fluid">
+  <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
+</div>
+<!--end-Footer-part-->
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.ui.custom.js"></script> 
+<script src="js/matrix.js"></script>
 </body>
 </html>
