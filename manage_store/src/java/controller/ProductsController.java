@@ -37,6 +37,6 @@ public class ProductController {
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public String products(ModelMap mm) {
         mm.put("listSanPham", productService.getListProduct());
-        return "products";
+        return "test";
     }
 }

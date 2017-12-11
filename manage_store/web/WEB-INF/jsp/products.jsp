@@ -57,20 +57,22 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <c:forEach items="${listSanPham}" var="listSanPham"/>
-                                            <tr class="gradeX">
-                                                <td>${listSanPham.tensanpham}</td>
-                                                <td>Internet
-                                                    Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td>Win 95+</td>
-                                                <td>Win 95+</td>
-                                                <td>Win 95+</td>
-                                                <td>Win 95+</td>
-                                                <td>Win 95+</td>
-                                                <td class="center">4</td>
-                                            </tr>
                                             
+                                            <c:forEach items="${listSanPham}" var="listSanPham">
+                                                <c:forTokens begin="1" end="${listSanPham.size()}" var="stt" step="1">
+                                                <tr class="gradeX">
+                                                    <td>${stt}</td>
+                                                    <td>${listSanPham.tensanpham}</td>
+                                                    <td>Win 95+</td>
+                                                    <td>Win 95+</td>
+                                                    <td>Win 95+</td>
+                                                    <td>Win 95+</td>
+                                                    <td>Win 95+</td>
+                                                    <td>Win 95+</td>
+                                                    <td class="center">4</td>
+                                                </tr>
+                                                </c:forTokens>
+                                            </c:forEach>
                                         </tbody>
                                     </table>
                                 </div>
