@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 12:05:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Danhmuc" table="danhmuc" catalog="manage_store" optimistic-lock="version">
+        <id name="dmId" type="java.lang.Integer">
+            <column name="dm_id" />
+            <generator class="identity" />
+        </id>
+        <property name="dmChaid" type="java.lang.Integer">
+            <column name="dm_chaid" />
+        </property>
+        <property name="tendanhmuc" type="string">
+            <column name="tendanhmuc" length="50" />
+        </property>
+        <property name="mota" type="string">
+            <column name="mota" length="200" />
+        </property>
+        <set name="sanphams" table="sanpham" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dm_id" />
+            </key>
+            <one-to-many class="pojo.Sanpham" />
+        </set>
+    </class>
+</hibernate-mapping>

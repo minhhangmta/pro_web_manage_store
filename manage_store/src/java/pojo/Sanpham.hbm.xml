@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 12:05:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Sanpham" table="sanpham" catalog="manage_store" optimistic-lock="version">
+        <id name="spId" type="java.lang.Integer">
+            <column name="sp_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="danhmuc" class="pojo.Danhmuc" fetch="select">
+            <column name="dm_id" />
+        </many-to-one>
+        <many-to-one name="nhacungcap" class="pojo.Nhacungcap" fetch="select">
+            <column name="ncc_id" />
+        </many-to-one>
+        <many-to-one name="trangthai" class="pojo.Trangthai" fetch="select">
+            <column name="tt_id" />
+        </many-to-one>
+        <property name="tensanpham" type="string">
+            <column name="tensanpham" length="50" />
+        </property>
+        <property name="mota" type="string">
+            <column name="mota" length="1000" />
+        </property>
+        <property name="hinhanh" type="string">
+            <column name="hinhanh" length="200" />
+        </property>
+        <property name="donvitinh" type="string">
+            <column name="donvitinh" length="20" />
+        </property>
+        <property name="soluong" type="java.lang.Integer">
+            <column name="soluong" />
+        </property>
+        <set name="ctphieunhaps" table="ctphieunhap" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="sp_id" />
+            </key>
+            <one-to-many class="pojo.Ctphieunhap" />
+        </set>
+        <set name="ctphieuxuats" table="ctphieuxuat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="sp_id" />
+            </key>
+            <one-to-many class="pojo.Ctphieuxuat" />
+        </set>
+    </class>
+</hibernate-mapping>
