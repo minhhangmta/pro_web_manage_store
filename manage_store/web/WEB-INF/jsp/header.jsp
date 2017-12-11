@@ -6,7 +6,7 @@
         
         <!--Header-part-->
         <div id="header">
-            <h1><a href="#">Manage Store</a></h1>
+            <h1><a href="${pageContext.request.contextPath}/index">Manage Store</a></h1>
         </div>
         <!--close-Header-part--> 
 
