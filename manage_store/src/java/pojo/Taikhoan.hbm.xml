@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 12:43:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Taikhoan" table="taikhoan" catalog="manage_store" optimistic-lock="version">
+        <id name="tkId" type="java.lang.Integer">
+            <column name="tk_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="trangthai" class="pojo.Trangthai" fetch="select">
+            <column name="tt_id" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="username" length="45" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" />
+        </property>
+        <property name="hoten" type="string">
+            <column name="hoten" length="50" />
+        </property>
+        <property name="sodienthoai" type="string">
+            <column name="sodienthoai" length="20" />
+        </property>
+        <set name="nhacungcaps" table="nhacungcap" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tt_id" />
+            </key>
+            <one-to-many class="pojo.Nhacungcap" />
+        </set>
+        <set name="phieuxuats" table="phieuxuat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tk_id" />
+            </key>
+            <one-to-many class="pojo.Phieuxuat" />
+        </set>
+        <set name="phieunhaps" table="phieunhap" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tk_id" />
+            </key>
+            <one-to-many class="pojo.Phieunhap" />
+        </set>
+    </class>
+</hibernate-mapping>

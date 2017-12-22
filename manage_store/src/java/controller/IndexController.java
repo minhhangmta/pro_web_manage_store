@@ -20,4 +20,9 @@ public class IndexController {
     public String index() {
         return "index";
     }
+    
+    @RequestMapping(value = "/phieunhap", method = RequestMethod.GET)
+    public String phieunhap() {
+        return "phieunhap";
+    }
 }

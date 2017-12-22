@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 12:43:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Trangthai" table="trangthai" catalog="manage_store" optimistic-lock="version">
+        <id name="ttId" type="java.lang.Integer">
+            <column name="tt_id" />
+            <generator class="identity" />
+        </id>
+        <property name="ttChaid" type="java.lang.Integer">
+            <column name="tt_chaid" />
+        </property>
+        <property name="tentrangthai" type="string">
+            <column name="tentrangthai" length="50" />
+        </property>
+        <set name="ctphieuxuats" table="ctphieuxuat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tt_id" />
+            </key>
+            <one-to-many class="pojo.Ctphieuxuat" />
+        </set>
+        <set name="sanphams" table="sanpham" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tt_id" />
+            </key>
+            <one-to-many class="pojo.Sanpham" />
+        </set>
+        <set name="phieuxuats" table="phieuxuat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tt_id" />
+            </key>
+            <one-to-many class="pojo.Phieuxuat" />
+        </set>
+        <set name="ctphieunhaps" table="ctphieunhap" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tt_id" />
+            </key>
+            <one-to-many class="pojo.Ctphieunhap" />
+        </set>
+        <set name="phieunhaps" table="phieunhap" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tt_id" />
+            </key>
+            <one-to-many class="pojo.Phieunhap" />
+        </set>
+        <set name="taikhoans" table="taikhoan" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tt_id" />
+            </key>
+            <one-to-many class="pojo.Taikhoan" />
+        </set>
+    </class>
+</hibernate-mapping>

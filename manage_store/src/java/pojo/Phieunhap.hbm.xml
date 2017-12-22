@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 12:43:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Phieunhap" table="phieunhap" catalog="manage_store" optimistic-lock="version">
+        <id name="pnId" type="java.lang.Integer">
+            <column name="pn_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="taikhoan" class="pojo.Taikhoan" fetch="select">
+            <column name="tk_id" />
+        </many-to-one>
+        <many-to-one name="trangthai" class="pojo.Trangthai" fetch="select">
+            <column name="tt_id" />
+        </many-to-one>
+        <property name="ngaynhap" type="timestamp">
+            <column name="ngaynhap" length="19" />
+        </property>
+        <property name="tongtien" type="java.lang.Integer">
+            <column name="tongtien" precision="9" scale="0" />
+        </property>
+        <set name="ctphieunhaps" table="ctphieunhap" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="pn_id" />
+            </key>
+            <one-to-many class="pojo.Ctphieunhap" />
+        </set>
+    </class>
+</hibernate-mapping>

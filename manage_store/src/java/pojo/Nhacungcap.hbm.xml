@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 12:43:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Nhacungcap" table="nhacungcap" catalog="manage_store" optimistic-lock="version">
+        <id name="nccId" type="java.lang.Integer">
+            <column name="ncc_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="taikhoan" class="pojo.Taikhoan" fetch="select">
+            <column name="tt_id" />
+        </many-to-one>
+        <property name="tenncc" type="string">
+            <column name="tenncc" length="50" />
+        </property>
+        <property name="sodienthoai" type="string">
+            <column name="sodienthoai" length="20" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" />
+        </property>
+        <property name="diachi" type="string">
+            <column name="diachi" length="200" />
+        </property>
+        <property name="gioithieu" type="string">
+            <column name="gioithieu" length="1000" />
+        </property>
+        <property name="hinhanh" type="string">
+            <column name="hinhanh" length="200" />
+        </property>
+        <set name="sanphams" table="sanpham" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ncc_id" />
+            </key>
+            <one-to-many class="pojo.Sanpham" />
+        </set>
+    </class>
+</hibernate-mapping>
