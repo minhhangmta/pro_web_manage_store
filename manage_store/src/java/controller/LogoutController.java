@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author minhh
  */
 @Controller
-public class IndexController {
+public class LogoutController {
 
-    @RequestMapping(value = {"/index", "/"}, method = RequestMethod.GET)
-    public String index() {
-        return "index";
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String doGet() {
+
+        return "login";
     }
 }

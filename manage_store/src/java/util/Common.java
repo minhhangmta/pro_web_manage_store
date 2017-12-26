@@ -6,6 +6,7 @@
 package util;
 
 import dao.impl.TaiKhoanDaoImpl;
+import javax.servlet.http.HttpSession;
 import pojo.Taikhoan;
 
 /**
@@ -26,9 +27,16 @@ public class Common {
         if (password.isEmpty() || password == null) {
             errMsg = "Press password!";
         }
-        if(username.isEmpty() && password.isEmpty() ){
+        if (username.isEmpty() && password.isEmpty()) {
             errMsg = "Press username & password!";
         }
         return errMsg;
+    }
+
+    public static boolean checkLogin(HttpSession session) {
+        if (session.getAttribute("username") != null) {
+            return true;
+        }
+        return false;
     }
 }

@@ -34,9 +34,11 @@ public class LoginController {
         String errMsg = Common.validateLogin(username, password);
         String view = "";
         if (errMsg.isEmpty()) {
-            view = "index";
+            view = "redirect:index";
         } else {
             mm.addAttribute("error", errMsg);
+            mm.addAttribute("username",username);
+            mm.addAttribute("password",password);
             view = "login";
         }
         return view;
